@@ -1,77 +1,86 @@
-📊 Quantigration SQL Project
-Welcome to the QuantigrationUpdates SQL project — a hands-on portfolio piece that demonstrates database design, data manipulation, and basic analytics in MySQL.
+# 📊 Quantigration SQL Project
 
-This project simulates a simplified customer ordering and returns (RMA) system for a tech company called Quantigration, tracking customers, orders, and return authorizations.
+Welcome to the **QuantigrationUpdates SQL project** — a hands-on portfolio piece demonstrating database design, data manipulation, and basic analytics using **MySQL**.
 
-🗂️ Project Structure
-This SQL script includes:
+This project simulates a simplified customer ordering and returns (RMA) system for a fictional tech company called **Quantigration**, tracking customers, orders, and return authorizations.
 
-Database creation: QuantigrationUpdates
+---
 
-3 relational tables:
+## 🗂️ Project Structure
 
-Customers: Customer info (later renamed to Collaborators)
+This SQL project includes:
 
-Orders: Product orders placed by customers
+- 📁 **Database**: `QuantigrationUpdates`
+- 📊 **3 relational tables**:
+  - `Customers`: Customer info (later renamed to `Collaborators`)
+  - `Orders`: Product orders placed by customers
+  - `RMA`: Return Merchandise Authorization records linked to orders
 
-RMA: Return Merchandise Authorization records linked to orders
+---
 
-🧱 Table Relationships
-Orders.CustomerID → references Customers.CustomerID
+## 🧱 Table Relationships
 
-RMA.OrderID → references Orders.OrderID
+- `Orders.CustomerID` → references `Customers.CustomerID`  
+- `RMA.OrderID` → references `Orders.OrderID`
 
-📥 Sample Data
+---
+
+## 📥 Sample Data
+
 The script includes:
 
-3 customer records
+- 3 sample customer records  
+- 3 product orders  
+- 3 RMA records representing realistic return scenarios
 
-3 product orders
+---
 
-3 RMA records representing typical return scenarios
+## 🛠️ Operations & Queries Demonstrated
 
-🛠️ Operations & Queries
-The file demonstrates:
+- ✅ `JOIN` — e.g., customers and their orders by location  
+- 📌 `WHERE` — filter by state or city  
+- 🔁 `UPDATE` — reflect RMA completion  
+- ❌ `DELETE` — remove rejected returns  
+- 🔄 `RENAME TABLE` — change `Customers` → `Collaborators`  
+- 📤 `INTO OUTFILE` — export `Orders` data (local MySQL only)
 
-✅ Joins (e.g., customers and their orders by location)
+---
 
-📌 WHERE clauses to filter by state or city
+## 📂 File
 
-🔁 UPDATE to reflect RMA completion
+- `QuantigrationUpdates.sql` — contains all DDL, DML, and query examples
 
-❌ DELETE to remove rejected returns
+---
 
-🔄 RENAME to change a table name (Customers → Collaborators)
+## 💡 Bonus Notes on Export
 
-📤 INTO OUTFILE export of orders (for local MySQL setups)
+The `INTO OUTFILE` command saves results to `/tmp/` and only works if:
 
-📂 File
-SQL Project QuantigrationUpdates.sql — all DDL, DML, and analysis queries
+- You're using a **local MySQL server**
+- Your MySQL user has **file write permissions**
 
-💡 Bonus Notes
-The INTO OUTFILE command writes to /tmp/ — this only works if:
+**Note**: This won’t work on cloud-based or hosted MySQL platforms.  
+For GUI tools like MySQL Workbench, exporting can be done via the **Export** menu.
 
-You’re using a MySQL server installed on your system
+---
 
-Your MySQL user has permission to write to files
+## 🔧 Technologies Used
 
-It won’t work on most cloud-based SQL platforms
+- MySQL
+- MySQL Workbench
 
-If you’re using MySQL Workbench or another GUI, exporting can be done via the export menu instead.
+---
 
-🔧 Technologies
-MySQL Workbench
+## ✨ Portfolio Purpose
 
-
-✨ Portfolio Purpose
 This project was created to demonstrate:
 
-Relational database design
+- Relational database schema design  
+- Foreign key relationships  
+- Executing SQL queries (SELECT, JOIN, UPDATE, DELETE, RENAME)  
+- Simulating business logic through a database  
+- Real-world SQL for customer orders and returns
 
-Foreign key usage
+---
 
-Writing and executing SQL queries
 
-Performing CRUD operations
-
-Structuring a database for real-world scenarios
